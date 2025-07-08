@@ -14,7 +14,7 @@ export const api = {
     getGamesByPlatform: async (platform, limit = 10, skip = 0) => {
         const response = await fetch(`${BASE_URL}/giveaways?platform=${platform}&limit=${limit}&skip=${skip}`);
         return response.json();
-    }
+    },
 
    
 
