@@ -1,18 +1,18 @@
 
 import { useNavigate } from 'react-router-dom';
-import GeameList from '../compoment/Games/GameList';
+import GameList from '../compoment/Games/GameList';
 
 const HomePage = () => {
     const navigate = useNavigate();
 
     const handleViewDetail = (gameId) => {
-        navigate(`/games/${gameId}`);
+        navigate(`/giveaways/${gameId}`);
     };
 
     return (
         <div className="home-page">
             <h1> ยินดีต้อนรับสู่ร้านค้าเกมออนไลน์ </h1>
-            <ProductList onViewDetail={handleViewDetail} />
+            <GameList onViewDetail={handleViewDetail} />
         </div>
     );
 }

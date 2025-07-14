@@ -12,7 +12,7 @@ export const useGame = (id) => {
             try {
                 setLoading(true);
                 const data = await api.getGames();
-                setGame(data.Games);
+                setGame(data);
             } catch (error) {
                 setError(error.message);
             } finally{

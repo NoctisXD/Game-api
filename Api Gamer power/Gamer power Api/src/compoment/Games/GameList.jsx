@@ -3,7 +3,7 @@ import { useGame } from "../../hooks/useGame";
 import { GameCard } from "./GameCard";
 
 const GeameList = ({ onViewDetail }) => {
-    const { Games, loading, error } = useGames();
+    const { Games, loading, error } = useGame();
 
     if (loading) {
         return <div className="loading"> Loading... </div>;
