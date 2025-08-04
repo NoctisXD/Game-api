@@ -1,42 +1,167 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.home-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #111111, #1f1f1f, #000000);
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* header สวย ๆ มีเงาและไล่สี */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(to right, #6a00ff, #4a00e0, #0f0f91);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* ----------------------------- */
+.games-list {
+    padding: 20px;
+    color: #ffffff;
 }
 
-.card {
-  padding: 2em;
+.games-list h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #ffffff; /* หรือสีอื่นตามธีม */
 }
 
-.read-the-docs {
-  color: #888;
+.games-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.1);
+    letter-spacing: 1px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+/* กำหนดให้แบ่งเป็น 4 คอลัมน์ถ้าหน้าจอกว้างพอ */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 คอลัมน์ */
+    gap: 50px; /* ระยะห่างระหว่างช่อง */
+    padding: 5%;
+}
+
+/* รองรับ Responsive (สำหรับจอเล็ก) */
+@media (max-width: 1200px) {
+    .game-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .game-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .game-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* สำหรับสถานะโหลดหรือ error */
+.loading, .error {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 40px;
+    color: #cccccc;
+}
+
+/* ----------------------------- */
+.Game-card {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+}
+
+.Game-card:hover {
+    transform: translateY(-5px);
+}
+
+
+.Game-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.Game-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 16px;
+}
+
+.Game-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    max-height: 2.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+    cursor: pointer;
+}
+
+.Game-title:hover {
+    overflow: auto;
+    white-space: normal;
+    max-height: 4.5em;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 4px;
+    border-radius: 6px;
+}
+
+/* อื่น ๆ เพิ่มความเรียบร้อย */
+.Game-pice {
+    color: #00ffcc;
+    font-weight: 600;
+}
+
+.Game-status {
+    font-size: 0.85rem;
+    color: #cccccc;
+}
+
+.Game-description {
+    font-size: 0.85rem;
+    color: #aaaaaa;
+    max-height: 4.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.Game-info button {
+    margin-top: auto;
+    background: linear-gradient(to right, #6a00ff, #4a00e0);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+.Game-info button:hover {
+    background: linear-gradient(to right, #8a2be2, #00bfff);
 }

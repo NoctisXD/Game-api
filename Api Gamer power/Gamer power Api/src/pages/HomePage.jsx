@@ -11,7 +11,7 @@ const HomePage = () => {
 
     return (
         <div className="home-page">
-            <h1> ยินดีต้อนรับสู่ร้านค้าเกมออนไลน์ </h1>
+            <header> Gamer Power </header>
             <GameList onViewDetail={handleViewDetail} />
         </div>
     );
